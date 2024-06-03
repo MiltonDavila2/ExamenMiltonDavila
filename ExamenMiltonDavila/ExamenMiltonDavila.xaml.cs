@@ -58,8 +58,21 @@ public partial class ExamenMiltonDavila : ContentPage
 
 		if (confirmacion)
 		{
-			await DisplayAlert("Listo", "Se ha hecho la descarga (Revise la carpeta recargas)", "Ok");
+
+			await DisplayAlert("Listo", "Se ha hecho la recarga (Se ha guardado en la memoria cache la informacion o vea el metodo Envio de datos)", "Ok");
+			await EnvioDeDatos(NumeroIngresado,OperadorSeleccionado,RecargaElegida,fecha);
 		}
+
+	}
+
+
+	public async Task EnvioDeDatos(string Numero, string Operadora, int Recarga, DateTime tiempo)
+	{
+		string nombre = $"{Numero}.txt";
+		string texto = $"Se realizo una recarga\nTelefono = {Numero}\nOperadora={Operadora}\n Cantidad Recarga ={Recarga} \nFecha Recarga = {tiempo}";
+		string file = Path.Combine(FileSystem.Current.CacheDirectory, nombre);
+		File.WriteAllText(file, texto);
+
 	}
 
 
