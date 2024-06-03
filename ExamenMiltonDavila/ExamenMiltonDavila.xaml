@@ -4,9 +4,44 @@
              x:Class="ExamenMiltonDavila.ExamenMiltonDavila"
              Title="ExamenMiltonDavila">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Label Text="Ingrese un numero de telefono"/>
+        <Entry x:Name="EntradaNumeroMD" Placeholder="0959807049" Keyboard="Telephone"/>
+
+        <Label Text="Seleccione el operador"/>
+
+
+        <Picker x:Name="EscojerOperadorMD" Title="">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+
+
+                    <x:String>Movistar</x:String>
+                    <x:String>Claro</x:String>
+                    <x:String>CNT</x:String>
+
+
+                </x:Array>
+                
+                
+            </Picker.ItemsSource>
+                
+            
+        </Picker>
+
+
+
+        <StackLayout>
+            <Label Text="Seleccione la cantidad que quiere hacer la recarga"/>
+
+            <RadioButton Content="3"/>
+            <RadioButton Content="5" IsChecked="True"/>
+            <RadioButton Content="10"/>
+
+        </StackLayout>
+
+        <Label x:Name="LabelSeleccionadoMD" Text="Selecciono la recarga de 5$"/>
+        <Button Text="Aceptar"/>
+
+
     </VerticalStackLayout>
 </ContentPage>
