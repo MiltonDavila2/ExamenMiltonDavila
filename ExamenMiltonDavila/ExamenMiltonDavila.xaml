@@ -33,14 +33,14 @@
         <StackLayout>
             <Label Text="Seleccione la cantidad que quiere hacer la recarga"/>
 
-            <RadioButton Content="3"/>
-            <RadioButton Content="5" IsChecked="True"/>
-            <RadioButton Content="10"/>
+            <RadioButton x:Name="Boton3"  Content="3" CheckedChanged="CambioDineroMD"/>
+            <RadioButton x:Name="Boton5" Content="5" IsChecked="True" CheckedChanged="CambioDineroMD"/>
+            <RadioButton x:Name="Boton10" Content="10" CheckedChanged="CambioDineroMD"/>
 
         </StackLayout>
 
         <Label x:Name="LabelSeleccionadoMD" Text="Selecciono la recarga de 5$"/>
-        <Button Text="Aceptar"/>
+        <Button Text="Aceptar" Clicked="Confirmacion"/>
 
 
     </VerticalStackLayout>
